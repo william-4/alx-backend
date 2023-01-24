@@ -3,7 +3,7 @@
 Contains class with methods to create simple pagination from csv data
 """
 import csv
-from typing import List
+from typing import list, tuple
 index_range = __import__('0-simple_helper_function').index_range
 
 
