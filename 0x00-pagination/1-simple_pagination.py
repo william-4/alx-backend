@@ -10,8 +10,8 @@ import math
 
 def index_range(page: int, page_size: int) -> tuple:
     """
-    returns a tuple of size 2 containing a start index 
-    and an end index corresponding to the range of 
+    returns a tuple of size 2 containing a start index
+    and an end index corresponding to the range of
     indexes to return in a list for those particular paramters
     """
     end_index = page*page_size
@@ -19,6 +19,7 @@ def index_range(page: int, page_size: int) -> tuple:
     range = (start_index, end_index)
 
     return (range)
+
 
 class Server:
     """Server class to paginate a database of
@@ -39,7 +40,7 @@ class Server:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
                 dataset = [row for row in reader]
-
+            
             self.__dataset = dataset[1:]
             
         return self.__dataset
