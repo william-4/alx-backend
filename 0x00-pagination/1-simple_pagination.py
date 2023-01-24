@@ -6,7 +6,7 @@ Simple Pagination
 
 import csv
 import math
-from typing import list, tuple
+from typing import List, Tuple
 
 
 def index_range(page: int, page_size: int) -> tuple:
@@ -53,9 +53,9 @@ class Server:
         self.assert_positive_integer_type(page)
         self.assert_positive_integer_type(page_size)
         dataset = self.dataset()
-        start, end = index_range(page, page_size)
+        range = index_range(page, page_size)
         try:
-            data = dataset[start:end]
+            data = dataset[range[0]:range[1]]
         except IndexError:
             data = []
         return data
