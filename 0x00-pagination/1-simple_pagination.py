@@ -50,13 +50,12 @@ class Server:
         """ gets the required rows from the data set and
         returns them"""
 
-        assert type(page) == int
-        assert type(page_size) == int
-        assert page > 0
-        assert page_size > 0
-
-        self.dataset()
-        range = index_range(page, page_size)
-        data = self.__dataset[range[0]:range[1]]
-
-        return (data)
+        self.assert_positive_integer_type(page)
+        self.assert_positive_integer_type(page_size)
+        dataset = self.dataset()
+        start, end = index_range(page, page_size)
+        try:
+            data = dataset[start:end]
+        except IndexError:
+            data = []
+        return data
