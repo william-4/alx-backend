@@ -4,7 +4,7 @@ Module for a basic dictionary
 """
 from base_caching import BaseCaching
 
-        
+
 class BasicCache(BaseCaching):
 
     def __init__(self):
