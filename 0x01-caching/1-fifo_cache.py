@@ -6,11 +6,11 @@ from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
-"""
-Caching using FIFO
-Methods: put
-         get
-"""
+    """
+    Caching using FIFO
+    Methods: put
+             get
+    """
 
     def __init__(self):
         """
