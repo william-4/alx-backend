@@ -6,6 +6,9 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
+    """
+    Simple caching that adds and returns an item from our dict
+    """
 
     def __init__(self):
         """
