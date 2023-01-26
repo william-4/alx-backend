@@ -8,8 +8,9 @@ from base_caching import BaseCaching
 class BasicCache(BaseCaching):
     """
     Simple caching that adds and returns an item from our dict
+    Methods: put
+             get
     """
-
     def __init__(self):
         """
         Initialize BasicCache using parent class __init__ method
