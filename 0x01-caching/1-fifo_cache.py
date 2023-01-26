@@ -18,7 +18,6 @@ class FIFOCache(BaseCaching):
         """
     super().__init__()
 
-
   def put(self, key, item):
     """
         Adds an item to our dict from cache_data
