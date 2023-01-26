@@ -32,10 +32,10 @@ class LIFOCache(BaseCaching):
                 del self.cache_data[popped]
 
     def get(self, key):
-    """
-    Retrieves an item from our dict cache_data
-    """
-    if key is None or key not in self.cache_data.keys():
-        pass
-      else:
-        return (self.cache_data[key])
+        """
+        Retrieves an item from our dict cache_data
+        """
+        if key is None or key not in self.cache_data.keys():
+            pass
+        else:
+            return (self.cache_data[key])
