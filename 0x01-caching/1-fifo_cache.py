@@ -23,13 +23,13 @@ Methods: put
         Adds an item to our dict from cache_data
         """
         if key is None or item is None:
-           pass
+            pass
         else:
-           self.cache_data[key] = item
-           if (len(self.cache_data) > super().MAX_ITEMS):
-               popped = list(self.cache_data.keys())[0]
-               print("DISCARD: {}".format(popped))
-               del self.cache_data[popped]
+            self.cache_data[key] = item
+            if (len(self.cache_data) > super().MAX_ITEMS):
+                popped = list(self.cache_data.keys())[0]
+                print("DISCARD: {}".format(popped))
+                del self.cache_data[popped]
 
     def get(self, key):
         """
