@@ -5,7 +5,7 @@ Module for a basic dictionary
 from base_caching import BaseCaching
 
 
-class BasicCache(BaseCaching):
+class FIFOCache(BaseCaching):
 
   def __init__(self):
     """
