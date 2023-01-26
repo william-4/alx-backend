@@ -12,8 +12,7 @@ class BasicCache(BaseCaching):
         Initialize BasicCache using parent class __init__ method
         """
     super().__init__()
-    self.counter = 0
-    self.list = []
+
 
   def put(self, key, item):
     """
@@ -22,15 +21,11 @@ class BasicCache(BaseCaching):
     if key is None and item is None:
       pass
     else:
-      self.counter++
-      if (self.counter > self.MAX_ITEMS):
-        index = self.counter % 4
-        print("DISCARD: {}".format(self.list[index]))
-        del self.cache_data[self.list[index]]
-        self.list[index] = key
-      else:
-        self.list[self.counter] = key
-        self.cache_data[key] = item
+      self.cache_data[key] = item
+      if (self.counter > super().MAX_ITEMS):
+        popped = list(self.cache_data.keys())[0]
+        print("DISCARD: {}".format(popped))
+        del self.cache_data[popped]
 
   def get(self, key):
     """
