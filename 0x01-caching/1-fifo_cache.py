@@ -23,7 +23,7 @@ class FIFOCache(BaseCaching):
     """
         Adds an item to our dict from cache_data
         """
-    if key is None and item is None:
+    if key is None or item is None:
       pass
     else:
       self.cache_data[key] = item
