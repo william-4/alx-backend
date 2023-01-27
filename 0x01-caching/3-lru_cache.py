@@ -12,7 +12,7 @@ class LRUCache(BaseCaching):
         """Initializes cache data.
         """
         super().__init__()
-        self.age = list(self.cache_data.keys())
+        self.age = []
 
     def put(self, key, item):
         """Add key value data to the cache.
