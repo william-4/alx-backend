@@ -31,7 +31,6 @@ class LRUCache(BaseCaching):
             popped = self.age[0]
             print("Discard: {}".format(popped))
             del self.cache_data[popped]
-            self.age.remove(popped)
 
     def get(self, key):
         """ Retrieves key's value.
