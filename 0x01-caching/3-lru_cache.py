@@ -42,7 +42,7 @@ class LRUCache(BaseCaching):
             self.age.remove(key)
             self.age.append(key)
         else:
-            if len(self.age) >= 4:
+            if len(self.age) >= super().MAX_ITEMS:
                 del self.age[0]
             self.age.append(key)
         return self.cache_data[key]
