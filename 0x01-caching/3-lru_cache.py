@@ -27,7 +27,7 @@ class LRUCache(BaseCaching):
         else:
             self.age.append(key)
 
-        if len(self.cache_data) > super().MAX_ITEMS:
+        if len(self.cache_data) >= super().MAX_ITEMS:
             popped = self.age[0]
             print("Discard: {}".format(popped))
             del self.age[0]
