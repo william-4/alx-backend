@@ -28,6 +28,7 @@ class LRUCache(BaseCaching):
             self.age.append(key)
 
         if len(self.cache_data) > super().MAX_ITEMS:
+            del self.age[0]
             popped = self.age[0]
             print("Discard: {}".format(popped))
             del self.cache_data[popped]
@@ -37,6 +38,10 @@ class LRUCache(BaseCaching):
         """
         if key is None or key not in self.cache_data.keys():
             return None
-        self.age.remove(key)
-        self.age.append(key)
+        if key in self.age:
+            self.age.remove(key)
+            self.age.append(key)
+        else:
+            del self.age[0]
+            self.age.append(key)
         return self.cache_data[key]
