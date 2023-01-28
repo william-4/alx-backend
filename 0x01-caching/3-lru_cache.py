@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ LRUCache module that inherits from BaseCaching
 """
 
@@ -27,7 +27,7 @@ class LRUCache(BaseCaching):
         else:
             self.age.append(key)
 
-        if len(self.cache_data) >= super().MAX_ITEMS:
+        if len(self.cache_data) > super().MAX_ITEMS:
             popped = self.age[0]
             print("Discard: {}".format(popped))
             del self.age[0]
@@ -42,7 +42,7 @@ class LRUCache(BaseCaching):
             self.age.remove(key)
             self.age.append(key)
         else:
-            if len(self.age) >= super().MAX_ITEMS:
+            if len(self.age) > super().MAX_ITEMS:
                 del self.age[0]
             self.age.append(key)
         return self.cache_data[key]
