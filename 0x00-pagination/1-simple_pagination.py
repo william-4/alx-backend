@@ -45,8 +45,7 @@ class Server:
 
         return self.__dataset
 
-    def get_page(self, page: int = 1,\
-                 page_size: int = 10) -> list:
+    def get_page(self, page: int = 1, page_size: int = 10) -> list[list]:
         """ gets the required rows from the data set and
         returns them"""
 
