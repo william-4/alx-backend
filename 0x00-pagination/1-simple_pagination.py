@@ -40,9 +40,9 @@ class Server:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
                 dataset = [row for row in reader]
-            
+
             self.__dataset = dataset[1:]
-            
+
         return self.__dataset
 
     def get_page(self, page: int = 1,
