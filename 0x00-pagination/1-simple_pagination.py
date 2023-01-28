@@ -50,10 +50,8 @@ class Server:
         """ gets the required rows from the data set and
         returns them"""
 
-        assert type(page) == int
-        assert type(page_size) == int
-        assert page > 0
-        assert page_size > 0
+        assert (type(page) == int) and (page > 0)
+        assert (type(page_size) == int) and (page_size > 0)
         dataset = self.dataset()
         range = index_range(page, page_size)
         try:
