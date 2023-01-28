@@ -22,8 +22,12 @@ def index_range(page: int, page_size: int) -> tuple:
 
 
 class Server:
-    """Server class to paginate a database of
-    popular baby names"""
+    """
+    Server class to paginate a database of
+    popular baby names
+    Methods: dataset
+             get_page
+    """
 
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -45,9 +49,11 @@ class Server:
 
         return self.__dataset
 
-    def get_page(self, page: int = 1, page_size: int = 10) -> list[list]:
-        """ gets the required rows from the data set and
-        returns them"""
+    def get_page(self, page: int = 1, page_size: int = 10) -> list:
+        """
+        gets the required rows from the data set and
+        returns them
+        """
 
         assert (type(page) == int) and (page > 0)
         assert (type(page_size) == int) and (page_size > 0)
