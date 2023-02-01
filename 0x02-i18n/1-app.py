@@ -24,6 +24,7 @@ def get_locale():
     # example.  The best match wins.
     return request.accept_languages.best_match(Config.LANGUAGES)
 
+
 def get_timezone():
     user = getattr(g, 'user', None)
     if user is not None:
