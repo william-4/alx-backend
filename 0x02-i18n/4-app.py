@@ -4,7 +4,7 @@ Module that instantiates Flask, Babel and renders a simple html page
 """
 
 from flask import Flask, render_template, request
-from flask_babel import Babel
+from flask_babel import Babel, gettext as _
 
 
 class Config(object):
@@ -20,12 +20,14 @@ app = Flask(__name__)
 app.config.from_object(Config)
 babel = Babel(app)
 
-
 @babel.localeselector
 def get_locale():
     """
     Select best language match
     """
+    loc = request.args.get('locale')
+    if loc in app.config['LANGUAGES']:
+        return loc
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 @app.route('/', strict_slashes=False)
@@ -33,7 +35,7 @@ def index():
     """
     Route to our index page
     """
-    return render_template('2-index.html')
+    return render_template('4-index.html')
 
 
 if __name__ == "__main__":

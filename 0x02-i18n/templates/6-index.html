@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ _('Welcome to Holberton') }}</title>
+    </head>
+    <body>
+        <h1>{{ _('Hello world') }}</h1>
+        {% if g.user %}
+        <p>{{ _('logged_in_as', username.user.name) }}</p>
+        {% else %}
+        <p>{{ _('not_logged_in') }}</p>
+        {% endif %}
+    </body>
+</html>
