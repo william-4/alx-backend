@@ -59,6 +59,7 @@ def get_locale():
         return loc
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
+
 @app.route('/', strict_slashes=False)
 def index():
     """
