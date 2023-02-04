@@ -3,7 +3,7 @@
 Module that instantiates Flask, Babel and renders a simple html page
 """
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, g
 from flask_babel import Babel
 
 
@@ -46,7 +46,7 @@ def before_request():
     Add user to flask.g object if user is found
     """
     user = get_user()
-    flask.g.user = user
+    g.user = user
 
 
 @babel.localeselector
