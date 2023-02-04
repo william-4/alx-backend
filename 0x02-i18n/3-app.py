@@ -4,7 +4,7 @@ Module that instantiates Flask, Babel and renders a simple html page
 """
 
 from flask import Flask, render_template, request
-from flask_babel import Babel, gettext as
+from flask_babel import Babel
 
 
 class Config(object):
@@ -19,7 +19,6 @@ class Config(object):
 app = Flask(__name__)
 app.config.from_object(Config)
 babel = Babel(app)
-
 
 @babel.localeselector
 def get_locale():
